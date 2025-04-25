@@ -9,10 +9,10 @@ st.title("🧠 Autism Screening Dashboard")
 
 # Sidebar for file upload
 st.sidebar.header("Upload CSV Data")
-uploaded_file = st.sidebar.file_uploader("Choose a file", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload your CSV file", type=["csv"])
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
 
-if uploaded_file:
-    df = pd.read_csv("autism_data.csv")
 
     st.subheader("Data Overview")
     st.dataframe(df.head())
