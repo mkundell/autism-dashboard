@@ -12,7 +12,7 @@ st.sidebar.header("Upload CSV Data")
 uploaded_file = st.sidebar.file_uploader("Choose a file", type=["csv"])
 
 if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv("autism_data.csv")
 
     st.subheader("Data Overview")
     st.dataframe(df.head())
